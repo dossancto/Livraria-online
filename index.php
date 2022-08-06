@@ -21,6 +21,38 @@
 <body>
   <?php include 'navbar.html' ?>
   <?php include 'jumbotron.html' ?>
+  <div class="cibtauber-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <img src="https://placehold.it/450x320" class="img-responsive" style="width: 100%">
+        <div>
+          <h1>Nome do Produto</h1>
+          <h4>R$500,00</h4>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <img src="https://placehold.it/450x320" class="img-responsive" style="width: 100%">
+        <div>
+          <h1>Nome do Produto</h1>
+          <h4>R$500,00</h4>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <img src="https://placehold.it/450x320" class="img-responsive" style="width: 100%">
+        <div>
+          <h1>Nome do Produto</h1>
+          <h4>R$500,00</h4>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <img src="https://placehold.it/450x320" class="img-responsive" style="width: 100%">
+        <div>
+          <h1>Nome do Produto</h1>
+          <h4>R$500,00</h4>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
