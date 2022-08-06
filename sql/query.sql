@@ -36,3 +36,32 @@ CREATE TABLE tbl_livro
     CONSTRAINT fk_autor FOREIGN KEY(cd_autor) REFERENCES tbl_autor(cd_autor)
 )
 DEFAULT CHARSET UTF8;
+
+INSERT INTO tbl_categoria(ds_categoria)
+VALUES
+('Design'),
+('Infraestrutura'),
+('Dados'),
+('Front-End'),
+('Mobile');
+
+INSERT INTO tbl_autor (nm_autor)
+VALUES
+('Alexandre Aquíles'),
+('Tárcio Zemel'),
+('Rafael Steil'),
+('Fabrício Texeira'),
+('Vinícius Carvalho'),
+('Fernando Baglio'),
+('David Paniz'),
+('Rosangela Marquesone'),
+('Nathan Souza'),
+('Danilo Sato'),
+('Juliano Ramos'),
+('Fernando Bryan Frizzarin'),
+('Eduardo Popovici'),
+('Adrian Gois'),
+('Everton Coimbra de Araújo'),
+('Sérgio Lopes'),
+('Flávio Almeida'),
+('Roger Silva');
