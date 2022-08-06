@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+
   <title>Livraria Online</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +19,8 @@
 </head>
 
 <body>
-  <?php include 'navbar.php'; ?>
+  <?php include 'navbar.html' ?>
+  <?php include 'jumbotron.html' ?>
 </body>
 
 </html>
