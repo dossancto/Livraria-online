@@ -33,8 +33,8 @@
         <div class="col-sm-3">
           <img src="img/<?php echo $exibe['ds_capa']; ?>.jpg" class="img-responsive" style="width: 100%">
           <div>
-            <h4><?php echo $exibe['nm_livro']; ?></h4>
-            <h5>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.');?></h5>
+            <h5><?php echo mb_strimwidth($exibe['nm_livro'], 0, 30, '...'); ?></h5>
+            <h6>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.');?></h6>
           </div>
         </div>
       <?php } ?>
