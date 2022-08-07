@@ -19,8 +19,8 @@
 </head>
 
 <body>
-  <?php include 'navbar.html' ?>
-  <?php include 'jumbotron.html' ?>
+  <?php include 'components/navbar.html' ?>
+  <?php include 'components/jumbotron.html' ?>
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-3">
@@ -61,7 +61,7 @@
     </div>
   </div>
 
-  <?php include 'footer.html' ?>
+  <?php include 'components/footer.html' ?>
 </body>
 
 </html>

@@ -67,9 +67,9 @@ VALUES
 ('Roger Silva');
 
 -- View
-create view vw_livro
+CREATE VIEW vw_livro
 -- INNER JOIN
-as select 
+AS SELECT 
 	tbl_livro.cd_livro,
     tbl_livro.no_isbn,
     tbl_categoria.ds_categoria,
@@ -79,11 +79,11 @@ as select
     tbl_livro.qt_estoque,
     tbl_livro.ds_resumo_obra,
     tbl_livro.sg_lancamento
-from tbl_livro
-inner join tbl_autor
-	on tbl_livro.cd_autor = tbl_autor.cd_autor
-inner join tbl_categoria
-	on tbl_livro.cd_categoria = tbl_categoria.cd_categoria;
+FROM tbl_livro
+INNER JOIN tbl_autor
+	ON tbl_livro.cd_autor = tbl_autor.cd_autor
+INNER JOIN tbl_categoria
+	ON tbl_livro.cd_categoria = tbl_categoria.cd_categoria;
 
 -- Usa a View
-select * from vw_livro;
+SELECT * FROM vw_livro;
