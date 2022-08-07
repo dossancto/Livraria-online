@@ -12,13 +12,13 @@
   <?php
   include 'sql/conexao.php';
   $consulta = $connection->query("select * from vw_livro");
-  $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
 
-  echo $exibe['nm_livro'];
-  echo '<br>';
-  echo $exibe['vl_preco'];
-  echo '<br>';
-  echo $exibe['ds_categoria'];
+  while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) {
+    echo $exibe['nm_livro'] . '<br>';
+    echo $exibe['vl_preco'] . '<br>';
+    echo $exibe['ds_categoria'];
+    echo '<hr>';
+  }
   ?>
 
 </body>
