@@ -30,11 +30,20 @@
   <div class="container-fluid">
     <div class="row">
       <?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
-        <div class="col-sm-3">
+        <div class="col-sm-3" style="margin-bottom: 40px">
           <img src="img/<?php echo $exibe['ds_capa']; ?>.jpg" class="img-responsive" style="width: 100%">
           <div>
-            <h5><?php echo mb_strimwidth($exibe['nm_livro'], 0, 30, '...'); ?></h5>
-            <h6>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.');?></h6>
+            <h5><b><?php echo mb_strimwidth($exibe['nm_livro'], 0, 30, '...'); ?></b></h5>
+            <h6>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h6>
+
+            <div class="text-center">
+              <button class="btn btn btn-block" type="submit">
+                <span class="bi bi-info-circle-fill"> Detalhes</span>
+              </button>
+              <button class="btn btn-success btn-block" type="submit">
+                <span class="bi bi-currency-bitcoin"> Adicionar carrinho</span>
+              </button>
+            </div>
           </div>
         </div>
       <?php } ?>
