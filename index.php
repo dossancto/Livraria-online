@@ -23,7 +23,7 @@
   include 'components/navbar.html';
   include 'components/jumbotron.html';
   include 'sql/conexao.php';
-  $consulta = $connection->query('select * from vw_livro');
+  $consulta = $connection->query('select nm_livro, ds_capa, vl_preco from vw_livro;');
   ?>
 
 
