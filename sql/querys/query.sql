@@ -72,6 +72,7 @@ CREATE VIEW vw_livro
 AS SELECT 
 	tbl_livro.cd_livro,
     tbl_livro.no_isbn,
+    tbl_livro.ds_capa,
     tbl_categoria.ds_categoria,
     tbl_livro.nm_livro,
     tbl_livro.no_pag,

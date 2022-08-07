@@ -19,45 +19,25 @@
 </head>
 
 <body>
-  <?php include 'components/navbar.html' ?>
-  <?php include 'components/jumbotron.html' ?>
+  <?php
+  include 'components/navbar.html';
+  include 'components/jumbotron.html';
+  include 'sql/conexao.php';
+  $consulta = $connection->query('select * from vw_livro');
+  ?>
+
+
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-3">
-        <img src="https://placehold.it/450x320" class="img-responsive" style="width: 100%">
-        <div>
-          <h1>Nome do Produto</h1>
-          <h4>R$500,00</h4>
+      <?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
+        <div class="col-sm-3">
+          <img src="img/<?php echo $exibe['ds_capa']; ?>.jpg" class="img-responsive" style="width: 100%">
+          <div>
+            <h4><?php echo $exibe['nm_livro']; ?></h4>
+            <h5><?php echo $exibe['vl_preco']; ?></h5>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <img src="https://placehold.it/450x320" class="img-responsive" style="width: 100%">
-        <div>
-          <h1>Nome do Produto</h1>
-          <h4>R$500,00</h4>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <img src="https://placehold.it/450x320" class="img-responsive" style="width: 100%">
-        <div>
-          <h1>Nome do Produto</h1>
-          <h4>R$500,00</h4>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <img src="https://placehold.it/450x320" class="img-responsive" style="width: 100%">
-        <div>
-          <h1>Nome do Produto</h1>
-          <h4>R$500,00</h4>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <img src="https://placehold.it/450x320" class="img-responsive" style="width: 100%">
-        <div>
-          <h1>Nome do Produto</h1>
-          <h4>R$500,00</h4>
-        </div>
-      </div>
+      <?php } ?>
     </div>
   </div>
 

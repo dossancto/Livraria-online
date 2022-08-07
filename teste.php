@@ -14,9 +14,9 @@
   $consulta = $connection->query("select * from vw_livro");
 
   while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) {
-    echo $exibe['nm_livro'] . '<br>';
-    echo $exibe['vl_preco'] . '<br>';
-    echo $exibe['ds_categoria'];
+    echo $exibe['ds_capa'] . '<br>';
+    // echo $exibe['vl_preco'] . '<br>';
+    // echo $exibe['ds_capa'];
     echo '<hr>';
   }
   ?>
