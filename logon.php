@@ -33,28 +33,29 @@
       <div class="col-sm-4">
 
         <h2>Logon de Usuário</h2>
+        <form method="POST" name="frmusuario" action="validaUsuario.php" >
 
-        <div class="form-group">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input name="txtemail" type="email" class="form-control" required id="email">
+          </div>
 
-          <label for="email">Email</label>
-          <input name="email" type="email" class="form-control" required id="email">
-        </div>
+          <div class="form-group my-4">
 
-        <div class="form-group my-4">
-
-          <label for="senha">Senha</label>
-          <input name="senha" type="password" class="form-control" required id="senha">
-        </div>
+            <label for="senha">Senha</label>
+            <input name="txtsenha" type="password" class="form-control" required id="senha">
+          </div>
 
 
-        <button type="submit" class="btn btn-default btn-outline-dark ">
-          Entrar
-        </button>
+          <button type="submit" class="btn btn-default btn-outline-dark ">
+            Entrar
+          </button>
 
-        <button type="submit" class="btn btn-link">
-          Ainda não sou cadastrado
-        </button>
+          <button type="submit" class="btn btn-link">
+            Ainda não sou cadastrado
+          </button>
 
+        </form>
       </div>
     </div>
   </div>
