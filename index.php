@@ -34,7 +34,7 @@
           <img src="img/<?php echo $exibe['ds_capa']; ?>.jpg" class="img-responsive" style="width: 100%">
           <div>
             <h4><?php echo $exibe['nm_livro']; ?></h4>
-            <h5><?php echo $exibe['vl_preco']; ?></h5>
+            <h5>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.');?></h5>
           </div>
         </div>
       <?php } ?>
