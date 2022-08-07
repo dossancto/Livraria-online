@@ -23,7 +23,7 @@
   include 'components/navbar.html';
   include 'components/jumbotron.html';
   include 'sql/conexao.php';
-  $consulta = $connection->query('select nm_livro, ds_capa, vl_preco from vw_livro;');
+  $consulta = $connection->query('select nm_livro, ds_capa, vl_preco, qt_estoque from vw_livro');
   ?>
 
 
@@ -37,11 +37,18 @@
             <h6>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h6>
 
             <div class="text-center">
-              <button class="btn btn btn-block" type="submit">
+              <button class="btn btn-default btn-block" type="submit" style="color: cadetblue;">
                 <span class="bi bi-info-circle-fill"> Detalhes</span>
               </button>
-              <button class="btn btn-success btn-block" type="submit">
-                <span class="bi bi-currency-bitcoin"> Adicionar carrinho</span>
+              <?php
+              $tem_estoque = $exibe['qt_estoque'] > 0;
+              $estoque_icon = $tem_estoque ? 'bi bi-currency-bitcoin' : 'bi bi-x-circle-fill';
+              $btn_type = $tem_estoque ? 'btn-success' : 'btn-danger';
+              $btn_msg = $tem_estoque ? 'Adicionar ao Carrinho' : 'Indisponível';
+              $enabled = $tem_estoque ? '' : 'disabled';
+              ?>
+              <button class="btn <?php echo $btn_type ?> btn-block" type="submit" <?php echo $enabled?>>
+                <span class="<?php echo $estoque_icon ?>"> <?php echo $btn_msg ?></span>
               </button>
             </div>
           </div>
