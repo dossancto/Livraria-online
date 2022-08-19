@@ -20,9 +20,10 @@
 
 <body>
   <?php
-  include 'components/navbar.html';
-  include 'components/jumbotron.html';
   include 'sql/conexao.php';
+  include 'components/navbar.php';
+  include 'components/jumbotron.html';
+
   $consulta = $connection->query('select nm_livro, ds_capa, vl_preco, qt_estoque from vw_livro');
   ?>
 
@@ -30,11 +31,14 @@
   <div class="container-fluid">
     <div class="row">
       <?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
+
         <div class="col-sm-3" style="margin-bottom: 40px">
           <img src="img/<?php echo $exibe['ds_capa']; ?>.jpg" class="img-responsive" style="width: 100%">
           <div>
-            <h5><b><?php echo mb_strimwidth($exibe['nm_livro'], 0, 30, '...'); ?></b></h5>
-            <h6>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h6>
+            <h5><b>
+                <?php echo mb_strimwidth($exibe['nm_livro'], 0, 30, '...'); ?></b></h5>
+            <h6>R$
+              <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h6>
 
             <div class="text-center">
               <button class="btn btn-default btn-block" type="submit" style="color: cadetblue;">
@@ -47,7 +51,7 @@
               $btn_msg = $tem_estoque ? 'Adicionar ao Carrinho' : 'Indisponível';
               $enabled = $tem_estoque ? '' : 'disabled';
               ?>
-              <button class="btn <?php echo $btn_type ?> btn-block" type="submit" <?php echo $enabled?>>
+              <button class="btn <?php echo $btn_type ?> btn-block" type="submit" <?php echo $enabled ?>>
                 <span class="<?php echo $estoque_icon ?>"> <?php echo $btn_msg ?></span>
               </button>
             </div>

@@ -20,7 +20,7 @@
 
 <body>
   <?php
-  include 'components/navbar.html';
+  include 'components/navbar.php';
   include 'components/jumbotron.html';
   include 'sql/conexao.php';
 

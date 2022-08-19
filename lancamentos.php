@@ -20,7 +20,7 @@
 
 <body>
   <?php
-  include 'components/navbar.html';
+  include 'components/navbar.php';
   include 'components/jumbotron.html';
   include 'sql/conexao.php';
   $consulta = $connection->query('select nm_livro, ds_capa, vl_preco, qt_estoque from vw_livro where sg_lancamento = "S"');

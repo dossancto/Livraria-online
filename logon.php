@@ -19,7 +19,7 @@
   <?php
 
   include 'sql/conexao.php';
-  include 'components/navbar.html';
+  include 'components/navbar.php';
   include 'components/jumbotron.html';
 
   ?>

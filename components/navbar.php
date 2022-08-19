@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Books Online</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="./">Books Online</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -35,9 +34,24 @@
           <a class="nav-link" href="#">Contato</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./logon.php">
-            <span class="bi bi-box-arrow-in-right"> Login</span>
-          </a>
+          <?php
+
+          session_start();
+
+          if (empty($_SESSION["ID"])) {
+            echo "<a class='nav-link' href='./logon.php'> <span class=1bi bi-box-arrow-in-right1> Logon</span></a>";
+          } else {
+            $opa = $_SESSION["ID"];
+            $id_usr = "id";
+            $consulta_usuario = $connection->query("select nm_usuario from tbl_usuario where cd_usuario = " . $_SESSION['ID']);
+            $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
+
+            echo "<li class='nav-item'><a href='#' class='nav-link'><span> " . $exibe_usuario['nm_usuario'] . "&nbsp </span></a></li>";
+            echo "<a class='nav-link' href='./sair.php'> ";
+            echo " Logout ";
+            echo "<span class='bi bi-box-arrow-in-right'></span></a>";
+          }
+          ?>
         </li>
       </ul>
     </div>
