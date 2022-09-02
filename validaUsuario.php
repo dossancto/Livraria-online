@@ -11,7 +11,9 @@ $consulta = $connection->query("select cd_usuario, ds_email, ds_senha, ds_status
 
 if ($consulta->rowCount() == 1) {
   $exibeusuario = $consulta->fetch(PDO::FETCH_ASSOC);
+
   $_SESSION['ID'] = $exibeusuario['cd_usuario'];
+  $_SESSION['status'] = $exibeusuario['ds_status'];
   header('location:index.php');
 } else {
   header('location:erro.php');

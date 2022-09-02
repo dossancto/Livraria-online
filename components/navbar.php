@@ -46,10 +46,16 @@
             $consulta_usuario = $connection->query("select nm_usuario from tbl_usuario where cd_usuario = " . $_SESSION['ID']);
             $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
 
-            echo "<li class='nav-item'><a href='#' class='nav-link'><span> " . $exibe_usuario['nm_usuario'] . "&nbsp </span></a></li>";
-            echo "<a class='nav-link' href='./sair.php'> ";
-            echo " Logout ";
-            echo "<span class='bi bi-box-arrow-in-right'></span></a>";
+            echo "<li class='nav-item'><a href=";
+
+            if ($_SESSION['status'] == 0) {
+              echo "'#' class='nav-link'><span> " . $exibe_usuario['nm_usuario'] . "&nbsp </span>";
+            } else {
+              echo "'adm.php class='nav-link'><button class='btn  btn-danger'>Administrativo</button>";
+            }
+
+            echo "</a></li><a class='nav-link' href='./sair.php'>  Logout " . 
+            "<span class='bi bi-box-arrow-in-right'></span></a>";
           }
           ?>
         </li>
