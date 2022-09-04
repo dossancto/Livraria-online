@@ -42,13 +42,16 @@
 
         <h2>Usuário ou senha Incorretos<h2>
 
-        <a href="formLogon.php" class="btn btn-block btn-danger" role="button">Tentar Novamente</a>
+            <a href="formLogon.php" class="btn btn-block btn-danger" role="button">Tentar Novamente</a>
 
-        <button type="button" class="btn btn-link">
 
-          Ainda não sou cadastrado
+            <a href="frmusuario.php">
+              <button type="button" class="btn btn-link">
 
-        </button>
+                Ainda não sou cadastrado
+
+              </button>
+            </a>
 
       </div>
     </div>

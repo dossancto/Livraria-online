@@ -33,7 +33,7 @@
       <div class="col-sm-4">
 
         <h2>Logon de Usuário</h2>
-        <form method="POST" name="frmusuario" action="validaUsuario.php" >
+        <form method="POST" name="frmusuario" action="validaUsuario.php">
 
           <div class="form-group">
             <label for="email">Email</label>
@@ -51,9 +51,11 @@
             Entrar
           </button>
 
-          <button type="submit" class="btn btn-link">
-            Ainda não sou cadastrado
-          </button>
+          <a href="frmusuario.php">
+            <button type="button" class="btn btn-link">
+              Ainda não sou cadastrado
+            </button>
+          </a>
 
         </form>
       </div>
