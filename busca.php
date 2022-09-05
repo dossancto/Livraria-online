@@ -40,7 +40,13 @@
 
   $consulta = $connection->query("select * from vw_livro where nm_livro like concat ('%', '$pesquisa', '%') OR nm_autor like concat ('%', '$pesquisa', '%')");
 
+  if (empty($pesquisa)) {
+    header("location:index.php");
+  }
 
+  if ($consulta->rowCount() == 0) {
+    header("location:erro2.php");
+  }
 
   ?>
 

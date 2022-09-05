@@ -42,12 +42,7 @@
       <div class="col-sm-4"></div>
       <div class="col-sm-4 text-center">
 
-        <h2>Email já em uso na Loja!!!</h2>
-
-        <a href="frmusuario.php" class="btn btn-block btn-info" role="button">Tentar Novamente</a>
-
-        <a href="esquecisenha.php" class="btn btn-block btn-primary" role="button">Esqueci a senha</a>
-
+        <h2>Nenhum livro foi encontrado</h2>
 
       </div>
     </div>
