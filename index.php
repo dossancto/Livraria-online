@@ -24,7 +24,7 @@
   include 'components/navbar.php';
   include 'components/jumbotron.html';
 
-  $consulta = $connection->query('select nm_livro, ds_capa, vl_preco, qt_estoque from vw_livro');
+  $consulta = $connection->query('select nm_livro, ds_capa, cd_livro, vl_preco, qt_estoque from vw_livro');
   ?>
 
 
@@ -41,9 +41,11 @@
               <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h6>
 
             <div class="text-center">
-              <button class="btn btn-default btn-block" type="submit" style="color: cadetblue;">
-                <span class="bi bi-info-circle-fill"> Detalhes</span>
-              </button>
+              <a href="detalhesProd.php?cd=<?php echo $exibe['cd_livro']; ?>">
+                <button class="btn btn-default btn-block" type="submit" style="color: cadetblue;">
+                  <span class="bi bi-info-circle-fill"> Detalhes</span>
+                </button>
+              </a>
               <?php
               $tem_estoque = $exibe['qt_estoque'] > 0;
               $estoque_icon = $tem_estoque ? 'bi bi-currency-bitcoin' : 'bi bi-x-circle-fill';
