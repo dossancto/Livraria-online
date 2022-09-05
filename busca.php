@@ -40,38 +40,45 @@
 
   $consulta = $connection->query("select * from vw_livro where nm_livro like concat ('%', '$pesquisa', '%') OR nm_autor like concat ('%', '$pesquisa', '%')");
 
-  $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
+
 
   ?>
 
   <div class="container-fluid">
 
-    <div class="row" style="margin-top: 15px;">
+    <?php
+    while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
-      <div class="col-sm-1"></div>
+    ?>
+      <div class="row" style="margin-top: 15px;">
 
-      <div class="col-sm-1">
-        <img src="img/<?php echo $exibe['ds_capa'] ?>.jpg" class="img-responsive" style="width: 100%"/>
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-1">
+          <img src="img/<?php echo $exibe['ds_capa'] ?>.jpg" class="img-responsive" style="width: 100%" />
+        </div>
+
+        <div class="col-sm-5">
+          <h4 style="padding-top:20px"><?php echo $exibe['nm_livro'] ?></h4>
+        </div>
+        <div class="col-sm-2">
+          <h4 style="padding-top:20px">R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h4>
+        </div>
+        <div class="col-sm-2 col-xs-offset-right-1" style="padding-top:20px">
+          <a href="detalhesProd.php?cd=<?php echo $exibe['cd_livro']; ?>">
+            <button class="btn btn-default btn-block" type="submit" style="color: cadetblue;">
+              <span class="bi bi-info-circle-fill"> Detalhes</span>
+            </button>
+          </a>
+
+
+
+        </div>
+
       </div>
-
-      <div class="col-sm-5">
-        <h4 style="padding-top:20px"><?php echo $exibe['nm_livro'] ?></h4>
-      </div>
-      <div class="col-sm-2">
-        <h4 style="padding-top:20px"><?php echo $exibe['vl_preco'] ?></h4>
-      </div>
-      <div class="col-sm-2 col-xs-offset-right-1" style="padding-top:20px">
-        <a href="detalhesProd.php?cd=<?php echo $exibe['cd_livro']; ?>">
-          <button class="btn btn-default btn-block" type="submit" style="color: cadetblue;">
-            <span class="bi bi-info-circle-fill"> Detalhes</span>
-          </button>
-        </a>
-
-
-
-      </div>
-
-    </div>
+    <?php
+    }
+    ?>
 
 
 
