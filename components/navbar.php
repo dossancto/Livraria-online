@@ -24,8 +24,8 @@
             <li><a class="dropdown-item" href="./categorias.php?cat=Mobile">Mobile</a></li>
           </ul>
         </li>
-        <form class="d-flex" role="search">
-          <input class="form-control me-4" type="search" placeholder="Buscar" aria-label="Buscar">
+        <form name="frmPesquisa" method="GET" action="busca.php" class="d-flex" role="search">
+          <input class="form-control me-4" type="search" name="txtbuscar" placeholder="Buscar" aria-label="Buscar">
           <button class="btn" type="submit">Pesquisar</button>
         </form>
       </ul>
