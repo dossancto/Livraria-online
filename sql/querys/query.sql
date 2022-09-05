@@ -79,7 +79,8 @@ AS SELECT
     tbl_livro.vl_preco,
     tbl_livro.qt_estoque,
     tbl_livro.ds_resumo_obra,
-    tbl_livro.sg_lancamento
+    tbl_livro.sg_lancamento,
+    tbl_autor.nm_autor
 FROM tbl_livro
 INNER JOIN tbl_autor
 	ON tbl_livro.cd_autor = tbl_autor.cd_autor

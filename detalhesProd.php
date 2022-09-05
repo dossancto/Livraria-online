@@ -36,6 +36,10 @@
   include 'sql/conexao.php';
   include 'components/navbar.php';
 
+  $cd_livro = $_GET['cd'];
+
+  $consulta = $connection->query("SELECT * FROM vw_livro where cd_livro = '$cd_livro'");
+  $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
 
   ?>
 
@@ -50,7 +54,7 @@
 
         <h1>Detalhes do Produto</h1>
 
-        <img src="https://placehold.co/900x640" class="img-responsive" style="width:100%;">
+        <img src="img/<?php echo $exibe['ds_capa']; ?>.jpg" class="img-responsive" style="width:100%;">
 
         <!-- 
         <div class="col-sm-4 col-sm-offset-1" style="margin-top: 10px;">
@@ -66,14 +70,17 @@
 
 
       <div class="col-sm-7">
-        <h1>Nome do Produto</h1>
+        <h1><?php echo $exibe['nm_livro']; ?></h1>
 
-        <p>Descrição do Produto</p>
+        <p><?php echo $exibe['ds_resumo_obra'] ?></p>
 
-        <p>Marca</p>
+        <p><b><?php echo $exibe['no_pag'] ?></b> Páginas</p>
 
-        <p>R$ 0,00</p>
+        <p>Escrito Por: <b><?php echo $exibe['nm_autor'] ?></b></p>
 
+        <p>ISBN: <b><?php echo $exibe['no_isbn'] ?></b></p>
+
+        <p>R$ <b><?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></b></p>
 
         <button class="btn btn-lg btn-success">Comprar</button>
 
