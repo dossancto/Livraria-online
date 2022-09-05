@@ -51,7 +51,7 @@
             if ($_SESSION['status'] == 0) {
               echo "'#' class='nav-link'><span> " . $exibe_usuario['nm_usuario'] . "&nbsp </span>";
             } else {
-              echo "'adm.php class='nav-link'><button class='btn  btn-danger'>Administrativo</button>";
+              echo "'adm.php' class='nav-link'><button class='btn  btn-danger'>Administrativo</button>";
             }
 
             echo "</a></li><a class='nav-link' href='./sair.php'>  Logout " . 
