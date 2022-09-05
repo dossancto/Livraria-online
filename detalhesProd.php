@@ -36,7 +36,12 @@
   include 'sql/conexao.php';
   include 'components/navbar.php';
 
+
   $cd_livro = $_GET['cd'];
+
+  if(empty($cd_livro)){
+    header("location:index.php");
+  }
 
   $consulta = $connection->query("SELECT * FROM vw_livro where cd_livro = '$cd_livro'");
   $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
