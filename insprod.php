@@ -1,6 +1,7 @@
 <?php
 
 include 'sql/conexao.php';  // include com arquivo de conexao
+include 'rezise-class.php';
 
 //variáveis que vão receber os dados do formulário que esta na pagina formProduto
 $isbn = $_POST['txtisbn'];
@@ -35,9 +36,14 @@ $img_nome1 = md5(uniqid(time())).".".$extencao1[1];
 
 
 try {  // try para tentar inserir
-	
-	$inserir=$connection->query("INSERT INTO tbl_livro(no_isbn, cd_categoria, nm_livro, cd_autor, no_pag, vl_preco, qt_estoque, ds_resumo_obra, ds_capa, sg_lancamento) VALUES ('$isbn', '$cd_cat', '$nome_livro', '$cd_autor', '$nopag', '$preco', '$qtde', '$resumo', '$img_nome1', '$lanc')");
-	
+  $inserir=$connection->query("INSERT INTO tbl_livro(no_isbn, cd_categoria, nm_livro, cd_autor, no_pag, vl_preco, qt_estoque, ds_resumo_obra, ds_capa, sg_lancamento) VALUES ('$isbn', '$cd_cat', '$nome_livro', '$cd_autor', '$nopag', '$preco', '$qtde', '$resumo', '$img_nome1', '$lanc')");
+
+  move_uploaded_file($recebe_foto1['tmp_name'], $destino.$img_nome1);
+  $resizeObj = new resize($destino.$img_nome1);
+  $resizeObj -> resizeImage(900, 640, 'crip');
+  $resizeObj -> saveImage($destino.$img_nome1, 100);
+
+  header("Location:adm.php");
 	
 }catch(PDOException $e) {  // se houver algum erro explodir na tela a mensagem de erro
 	
@@ -45,5 +51,3 @@ try {  // try para tentar inserir
 	echo $e->getMessage();
 	
 }
-
-?>
