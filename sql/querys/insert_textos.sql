@@ -184,3 +184,5 @@ Estudo dirigido para MCSA prova 70-410','13','354','79.90','40',
  e exercícios para treinar, tudo para estar pronto para prestar suas provas e obter sua certificação.</p>','mcsa','S');
  
  select count(*) from tbl_livro; -- Exibe o numero de Registros
+
+

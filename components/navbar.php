@@ -35,6 +35,7 @@
         </li>
         <li class="nav-item">
           <?php
+            include "sql/conexao.php";
 
           session_start();
 

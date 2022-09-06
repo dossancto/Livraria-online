@@ -33,7 +33,7 @@
       <?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
 
         <div class="col-sm-3" style="margin-bottom: 40px">
-          <img src="img/<?php echo $exibe['ds_capa']; ?>.jpg" class="img-responsive" style="width: 100%">
+          <img src="img/<?php echo $exibe['ds_capa']; ?>" class="img-responsive" style="width: 100%">
           <div>
             <h5><b>
                 <?php echo mb_strimwidth($exibe['nm_livro'], 0, 30, '...'); ?></b></h5>

@@ -61,7 +61,7 @@
         <div class="col-sm-1"></div>
 
         <div class="col-sm-1">
-          <img src="img/<?php echo $exibe['ds_capa'] ?>.jpg" class="img-responsive" style="width: 100%" />
+          <img src="img/<?php echo $exibe['ds_capa'] ?>" class="img-responsive" style="width: 100%" />
         </div>
 
         <div class="col-sm-5">
