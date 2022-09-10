@@ -73,13 +73,13 @@
 
         </button>
 
+        <a href="sair.php">
+          <button type="submit" class="btn btn-block btn-lg btn-danger mb-2" style="width: 100%;">
 
+            Sair da área administrativa
 
-        <button type="submit" class="btn btn-block btn-lg btn-danger mb-2" style="width: 100%;">
-
-          Sair da área administrativa
-
-        </button>
+          </button>
+        </a>
       </div>
       <div class="col-sm-4">c</div>
     </div>

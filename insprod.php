@@ -40,10 +40,10 @@ try {  // try para tentar inserir
 
   move_uploaded_file($recebe_foto1['tmp_name'], $destino.$img_nome1);
   $resizeObj = new ResizeImage($destino.$img_nome1);
-  $resizeObj -> resizeTo(900, 640, 'exact');
+  $resizeObj -> resizeTo(900, 640, "maxheight");
   $resizeObj -> saveImage($destino.$img_nome1);
 
-  // header("Location:adm.php");
+  header("Location:adm.php");
 	
 }catch(PDOException $e) {  // se houver algum erro explodir na tela a mensagem de erro
 	
