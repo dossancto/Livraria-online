@@ -34,7 +34,7 @@
   include 'components/navbar.php';
 
 
-  if(empty($_SESSION['status']) || $_SESSION['status'] != 1){
+  if (empty($_SESSION['status']) || $_SESSION['status'] != 1) {
     header("location:index.php");
   }
 
@@ -58,11 +58,13 @@
         </a>
 
 
-        <button type="submit" class="btn btn-block btn-lg btn-warning mb-2" style="width: 100%;">
+        <a href="lista.php">
+          <button type="submit" class="btn btn-block btn-lg btn-warning mb-2" style="width: 100%;">
 
-          Alterar / Excluir Produto
+            Alterar / Excluir Produto
 
-        </button>
+          </button>
+        </a>
 
 
         <button type="submit" class="btn btn-block btn-lg btn-success mb-2" style="width: 100%;">

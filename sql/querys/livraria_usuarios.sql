@@ -1,3 +1,4 @@
+-- Active: 1662839088186@@127.0.0.1@3306@db_livraria
 USE db_livraria;
 
 CREATE TABLE tbl_usuario
