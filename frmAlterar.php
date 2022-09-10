@@ -67,11 +67,12 @@
 
         <div class="row">
 
-            <div class="col-sm-4 col-sm-offset-4">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
 
                 <h2>Alteração de produto</h2>
 
-                <form method="post" action="alterarProduto.php?" name="incluiProd" enctype="multipart/form-data">
+                <form method="post" action="alterarProduto.php?cd_altera=<?php echo $cd; ?>" name="incluiProd" enctype="multipart/form-data">
 
                     <div class="form-group">
 
@@ -155,7 +156,7 @@
 
                     <div class="form-group">
 
-                        <img src="imagens/<?php echo $exibe['ds_capa']; ?>" width="100px">
+                        <img src="img/<?php echo $exibe['ds_capa']; ?>" width="100px">
 
                     </div>
 
