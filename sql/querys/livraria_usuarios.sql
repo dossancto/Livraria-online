@@ -19,3 +19,5 @@ values
 (default, "Orlindo omiya", 'orlindo@gmail.com', 'protetor', 1, 'Casa do Caralho', 'Santos', '05252-020'),
 (default, "Janailson Matias", 'matias@gmail.com', 'janass', 0, 'Casa do Jaraguá', 'São Paulo', '00881-220'),
 (default, "Olidio Junior", 'olidio@hotmail.com', 'etec22', 0, 'Pompeia', 'São Paulo', '05252-025');
+
+select * from tbl_livro;
